@@ -859,9 +859,12 @@
 /mob/living/proc/flash_eyes(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, laser_pointer = FALSE, type = /atom/movable/screen/fullscreen/stretch/flash)
 	if(can_be_flashed(intensity, override_blindness_check))
 		overlay_fullscreen("flash", type)
+	if(PREFTOGGLE_DARKFLASH)
+		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "dflash", 25), 25)
+		return TRUE
+	else
 		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
-		return 1
-
+		return TRUE
 /mob/living/proc/check_eye_prot()
 	return 0
 

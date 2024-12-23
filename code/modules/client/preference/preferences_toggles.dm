@@ -45,6 +45,16 @@
 
 	SSblackbox.record_feedback("tally", "toggle_verbs", 1, blackbox_message)
 	our_prefs.save_preferences(user)
+	
+/datum/preference_toggle/dark_flash
+	name = "Toggle Bright or Dark flash mode."
+	description = "Toggle the preference of a bright flash effect or a dark flash effect."
+	preftoggle_bitflag = PREFTOGGLE_DARKFLASH
+	preftoggle_toggle = PREFTOGGLE_TOGGLE1
+	preftoggle_category = PREFTOGGLE_CATEGORY_GENERAL
+	enable_message = "When flash_eyes is called, you will now have the dark effect."
+	disable_message = "When flash_eyes is called, you will now have the bright effect."
+	blackbox_message = "Toggle DarkFlashMode"
 
 /datum/preference_toggle/toggle_ghost_ears
 	name = "Toggle Hearing All Speech as a Ghost"
