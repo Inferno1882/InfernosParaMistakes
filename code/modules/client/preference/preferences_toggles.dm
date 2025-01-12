@@ -49,7 +49,7 @@
 /datum/preference_toggle/dark_flash
 	name = "Toggle Bright or Dark flash mode."
 	description = "Toggle the preference of a bright flash effect or a dark flash effect."
-	preftoggle_bitflag = PREFTOGGLE_DARKFLASH
+	preftoggle_bitflag = PREFTOGGLE_3_DARKFLASH
 	preftoggle_toggle = PREFTOGGLE_TOGGLE1
 	preftoggle_category = PREFTOGGLE_CATEGORY_GENERAL
 	enable_message = "When flash_eyes is called, you will now have the dark effect."

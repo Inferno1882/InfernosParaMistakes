@@ -856,15 +856,21 @@
 	return TRUE
 
 //called when the mob receives a bright flash
-/mob/living/proc/flash_eyes(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, laser_pointer = FALSE, type = /atom/movable/screen/fullscreen/stretch/flash)
+//some patchwork code to see if it works
+
+//#define flashtype = null
+//if(PREFTOGGLE_3_DARKFLASH)
+//	flashtype = /atom/movable/screen/fullscreen/stretch/dflash
+//else
+//	flashtype = /atom/movable/screen/fullscreen/stretch/flash
+/mob/living/proc/flash_eyes(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, laser_pointer = FALSE, type = type)
 	if(can_be_flashed(intensity, override_blindness_check))
 		overlay_fullscreen("flash", type)
-	if(PREFTOGGLE_DARKFLASH)
 		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "dflash", 25), 25)
-		return TRUE
-	else
 		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
 		return TRUE
+//#undefine flashtype
+
 /mob/living/proc/check_eye_prot()
 	return 0
 
