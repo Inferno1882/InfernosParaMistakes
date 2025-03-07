@@ -219,6 +219,18 @@
 	desc = "A cyborg-mounted plasteel knife. Extremely sharp and durable."
 	origin_tech = null
 
+/obj/item/kitchen/knife/cheese
+	name = "cheese knife"
+	desc = "A blunt knife used to slice cheese."
+	icon_state = "knife-cheese"
+	force = 3
+
+/obj/item/kitchen/knife/pizza_cutter
+	name = "pizza cutter"
+	desc = "A simple circular blade on a handle, used to cut pizza."
+	icon_state = "pizza_cutter"
+	force = 8
+
 /*
  * Rolling Pins
  */

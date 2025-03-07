@@ -689,15 +689,6 @@
 				/obj/item/stack/sheet/mineral/gold = 1)
 	category = CAT_MISC
 
-/datum/crafting_recipe/showercurtain
-	name = "Shower Curtains"
-	result = list(/obj/structure/curtain)
-	time = 20
-	reqs = list(/obj/item/stack/sheet/cloth = 2,
-				/obj/item/stack/sheet/plastic = 2,
-				/obj/item/stack/rods = 1)
-	category = CAT_MISC
-
 /datum/crafting_recipe/chemical_payload
 	name = "Chemical Payload (C4)"
 	result = list(/obj/item/bombcore/chemical)
@@ -746,7 +737,7 @@
 
 /datum/crafting_recipe/bonetalisman
 	name = "Bone Talisman"
-	result = list(/obj/item/clothing/accessory/necklace/talisman)
+	result = list(/obj/item/clothing/accessory/talisman)
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/sinew = 1)
@@ -754,7 +745,7 @@
 
 /datum/crafting_recipe/bonecodpiece
 	name = "Skull Codpiece"
-	result = list(/obj/item/clothing/accessory/necklace/skullcodpiece)
+	result = list(/obj/item/clothing/accessory/skullcodpiece)
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				/obj/item/stack/sheet/animalhide/goliath_hide = 1)

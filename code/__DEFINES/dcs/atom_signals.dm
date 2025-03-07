@@ -6,6 +6,8 @@
 
 // /atom
 
+//from SSatoms InitAtom - Only if the  atom was not deleted or failed initialization and has a loc
+#define COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZED_ON "atom_init_success_on"
 // from SSatoms InitAtom - Only if the  atom was not deleted or failed initialization
 #define COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE "atom_init_success"
 ///from base of atom/attack_hulk(): (/mob/living/carbon/human)
@@ -38,12 +40,12 @@
 #define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"
 ///from base of [/atom/proc/update_icon]: (signalOut, did_anything)
 #define COMSIG_ATOM_UPDATED_ICON "atom_updated_icon"
-///from base of atom/Entered(): (atom/movable/entering, /atom)
+///from base of atom/Entered(): (atom/movable/entered, /atom)
 #define COMSIG_ATOM_ENTERED "atom_entered"
 ///from base of atom/Exit(): (/atom/movable/exiting, /atom/newloc)
 #define COMSIG_ATOM_EXIT "atom_exit"
 	#define COMPONENT_ATOM_BLOCK_EXIT (1<<0)
-///from base of atom/Exited(): (atom/movable/exiting, atom/newloc)
+///from base of atom/Exited(): (atom/movable/exiting, direction)
 #define COMSIG_ATOM_EXITED "atom_exited"
 ///from base of atom/ex_act(): (severity, target)
 #define COMSIG_ATOM_EX_ACT "atom_ex_act"
@@ -59,8 +61,10 @@
 #define COMSIG_ATOM_ACID_ACT "atom_acid_act"
 ///from base of atom/emag_act(): (/mob/user)
 #define COMSIG_ATOM_EMAG_ACT "atom_emag_act"
-///from base of atom/rad_act(intensity)
+///from base of atom/rad_act(intensity, emission_type)
 #define COMSIG_ATOM_RAD_ACT "atom_rad_act"
+///from base of turf/irradiate(/datum/radiation_wave)
+#define COMSIG_TURF_IRRADIATE
 ///from base of atom/singularity_pull(): (S, current_size)
 #define COMSIG_ATOM_SING_PULL "atom_sing_pull"
 ///from base of atom/set_light(): (l_range, l_power, l_color)
@@ -132,5 +136,9 @@
 	#define COMPONENT_NO_MOUSEDROP (1<<0)
 ///from base of atom/MouseDrop_T: (/atom/from, /mob/user)
 #define COMSIG_MOUSEDROPPED_ONTO "mousedropped_onto"
+
+/// Called on the atom being hit, from /datum/component/anti_magic/on_attack() : (obj/item/weapon, mob/user, antimagic_flags)
+#define COMSIG_ATOM_HOLY_ATTACK "atom_holyattacked"
 /// On a ranged attack: base of mob/living/carbon/human/RangedAttack (/mob/living/carbon/human)
 #define COMSIG_ATOM_RANGED_ATTACKED "atom_range_attacked"
+
